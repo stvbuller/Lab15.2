@@ -16,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/stvbuller/Lab15.2/issues"
   },
-  "homepage": "https://github.com/stvbuller/Lab15.2#readme"
+  "homepage": "https://github.com/stvbuller/Lab15.2#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "express-handlebars": "^3.0.0",
+    "mysql": "^2.10.2",
+    "sequelize": "^3.19.2"
+  }
 }
