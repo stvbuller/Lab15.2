@@ -13,6 +13,10 @@ var sequelize = new Sequelize('auth2_db', 'root');
 
 var PORT = process.env.NODE_ENV || 8090;
 
+var User = sequelize.define('User', {
+  name: Sequelize.STRING,
+  number: Sequelize.STRING,
+});
 
 app.get('/', function (req, res) {
     res.render('home', {
@@ -20,7 +24,13 @@ app.get('/', function (req, res) {
     });
 });
 
-
+app.post('/user', function(req, res) {
+  User.create(req.body).then(function(user){
+    res.redirect('/');
+  }).catch(function(err) {
+    res.redirect('/msg=' + err.message);
+  });
+});
 
 
 sequelize.sync();
